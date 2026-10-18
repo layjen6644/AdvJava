@@ -3,7 +3,7 @@ Name: Layla Jenkins
 Date: 10/18/2026
 Assignment: Java Lab Project: Part 2 - Week 2
 
-Interface for Rolodex operations
+Interface for Rolodex operations. Holds methods that will be implemented in the Rolodex class.
 */
 import java.util.ArrayList;
 

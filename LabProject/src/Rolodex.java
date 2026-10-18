@@ -4,7 +4,8 @@ Date: 10/18/2026
 Assignment: Java Lab Project: Part 2 - Week 2
 
 This is a composite class, it is made of objects from the Contact class and 
-stores those objects in ArrayLists.
+stores those objects in ArrayLists. This class implements the RolodexOperations interface, which defines the methods 
+that must be implemented in this class.
 */
 
 import java.util.ArrayList;

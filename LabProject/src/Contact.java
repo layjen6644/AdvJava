@@ -1,7 +1,7 @@
 /*
 Name: Layla Jenkins
-Date: 10/11/2026
-Assigment: Java Lab Project: Part 2 - Week 1
+Date: 10/18/2026
+Assignment: Java Lab Project: Part 2 - Week 2
 
 This is the base/super class. It stores common contact information.
 */

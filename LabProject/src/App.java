@@ -1,7 +1,7 @@
 /*
 Name: Layla Jenkins
-Date: 10/11/2026
-Assigment: Java Lab Project: Part 2 - Week 1
+Date: 10/18/2026
+Assignment: Java Lab Project: Part 2 - Week 2
 
 Main application.
 */
@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("Layla Jenkins - Project Week 1");
+        System.out.println("Layla Jenkins - Project Week 2");
         System.out.println(); // Blank line
         // Creates scanner for user input
         Scanner input = new Scanner(System.in);
@@ -39,12 +39,20 @@ public class App {
         //Declaring variable for user input and initializing
         int choice = 0; 
         // Main menu, loop until user selects option to exit
-        while (choice != 4) {
+        while (choice != 6) {
             System.out.println("1.  View All Contacts");
             System.out.println("2. Search Contacts by Last Name Initial");
             System.out.println("3. Add a New Contact");
-            System.out.println("4. Exit");
+            System.out.println("4. Update a Contact");
+            System.out.println("5. Remove a Contact");
+            System.out.println("6. Exit");
             System.out.println("Enter Selection: ");
+            // Validating user input
+            if (!input.hasNextInt()) {
+                System.out.println("Invalid selection. Try again.");
+                input.nextLine(); // Clear the invalid input
+                continue; // Go back to the start of the loop   
+            }
             // Declaring variable for user input and clearing after reading user input
             choice = input.nextInt();
             input.nextLine();
@@ -56,6 +64,7 @@ public class App {
                 // Loop through contacts and orders them starting at 1
                 for (int i = 0; i < contacts.size(); i++) {
                     System.out.println("\nContact "+ (i + 1));
+                    // Demonstrates polymorphism by calling the toString() method of each contact object, which will invoke the appropriate overridden method based on the actual type of the object (Business, Family, or Friend).
                     System.out.println(contacts.get(i));
                 }
             } else if (choice == 2) {
@@ -80,10 +89,42 @@ public class App {
                     }
                 }
             } else if (choice == 3) {
-                System.out.println("Under Construction");
+                System.out.println("\nAdd a New Contact");
                 System.out.println(); // Blank line
+                System.out.print("Enter first name: ");
+                String firstName = input.nextLine();
+                System.out.print("Enter last name: ");
+                String lastName = input.nextLine();
+                System.out.print("Enter phone number: ");
+                String phone = input.nextLine();
+                System.out.print("Enter email address: ");
+                String email = input.nextLine();
+                System.out.print("Enter contact type (Business, Family, Friend): ");
+                String contactType = input.nextLine();
+                if (contactType.equalsIgnoreCase("Business")) {
+                    System.out.print("Enter business name: ");
+                    String businessName = input.nextLine();
+                    Business newBusiness = new Business(firstName, lastName, phone, email, contactType, businessName);
+                    myRolodex.addContact(newBusiness);
+                    System.out.println("Contact added successfully.");
+                } else if (contactType.equalsIgnoreCase("Family")) {
+                    Family newFamily = new Family(firstName, lastName, phone, email, contactType);
+                    myRolodex.addContact(newFamily);
+                    System.out.println("Contact added successfully.");
+                } else if (contactType.equalsIgnoreCase("Friend")) {
+                    Friend newFriend = new Friend(firstName, lastName, phone, email, contactType);
+                    myRolodex.addContact(newFriend);
+                    System.out.println("Contact added successfully.");
+                } else {
+                    System.out.println("Invalid contact type. Contact not added.");
+                }
+                
             } else if (choice == 4) {
-                System.out.println("Exiting Program");
+                System.out.println("\nUnder contstruction");
+                System.out.println(); // Blank line
+
+            } else if (choice == 5) {
+                System.out.println("\nUnder construction");
                 System.out.println(); // Blank line
             } else {
                 System.out.println("Invalid selection. Try again.");

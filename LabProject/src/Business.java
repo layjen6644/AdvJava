@@ -1,34 +1,40 @@
 /*
 Name: Layla Jenkins
-Date: 10/18/2026
-Assignment: Java Lab Project: Part 2 - Week 2
+Date: 10/25/2026
+Assignment: Java Lab Project: Part 3 - Week 3
 
 This is a sub class. It will inherit properties and methods from the Contact (super) class.
 */
 
 public class Business extends Contact {
     // Class property
-    private String Company;
+    private String company;
 
     // Constructor to set super and this class's properties
     public Business(String firstName, String lastName, String phone, String email, String contactType, String company) {
         super(firstName, lastName, phone, email, contactType);
-        Company = company;
+        this.company = company;
+    }
+
+    // Constructor with no email
+    public Business(String firstName, String lastName, String phone, String contactType, String company) {
+        super(firstName, lastName, phone, "None", contactType);
+        this.company = company;
     }
 
     // Getters and setters
     public String getCompany() {
-        return Company;
+        return company;
     }
     public void setCompany(String company) {
-        Company = company;
+        this.company = company;
     }
 
-    // Overrides toString() to return contact info
+    // Implements abstract method from Contact class
     @Override 
     public String toString() {
         return String.format("%s%n%s%s",
-            super.toString(),
-            "Company Name: ", Company);
+            super.toStringBase(),
+            " Company Name: ", company);
     }
 }

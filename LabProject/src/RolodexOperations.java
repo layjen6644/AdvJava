@@ -1,7 +1,7 @@
 /*
 Name: Layla Jenkins
-Date: 10/18/2026
-Assignment: Java Lab Project: Part 2 - Week 2
+Date: 10/25/2026
+Assignment: Java Lab Project: Part 3 - Week 3
 
 Interface for Rolodex operations. Holds methods that will be implemented in the Rolodex class.
 */

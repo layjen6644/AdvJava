@@ -1,7 +1,7 @@
 /*
 Name: Layla Jenkins
-Date: 10/18/2026
-Assignment: Java Lab Project: Part 2 - Week 2
+Date: 10/25/2026
+Assignment: Java Lab Project: Part 3 - Week 3
 
 This is a sub class. It will inherit properties and methods from the Contact (super) class.
 */
@@ -11,5 +11,16 @@ public class Friend extends Contact {
     // Constructor set properties of parent and this class. 
     public Friend(String firstName, String lastName, String phone, String email, String contactType) {
         super(firstName, lastName, phone, email, contactType);
+    }
+
+     // Constructor with no email
+    public Friend(String firstName, String lastName, String phone, String contactType) {
+        super(firstName, lastName, phone, "None",contactType);
+    }
+
+    // Implements abstract method from Contact class
+    @Override
+    public String toString() {
+        return super.toStringBase();
     }
 }

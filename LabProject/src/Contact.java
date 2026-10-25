@@ -1,67 +1,80 @@
 /*
 Name: Layla Jenkins
-Date: 10/18/2026
-Assignment: Java Lab Project: Part 2 - Week 2
+Date: 10/25/2026
+Assignment: Java Lab Project: Part 3 - Week 3
 
-This is the base/super class. It stores common contact information.
+This is the abstract base/super class. It stores common shared contact information.
 */
 
-public class Contact {
-    // Class properties
-    private String FirstName;
-    private String LastName;
-    private String Phone;
-    private String Email;
-    private String ContactType;
+public abstract class Contact {
+    // Private properties
+    private String firstName;
+    private String lastName;
+    private String phone;
+    private String email;
+    private String contactType;
 
-    // Constructor to set contact properties
+    // Constructor to set shared/common contact properties
     public Contact(String firstName, String lastName, String phone, String email, String contactType) {
-        FirstName = firstName;
-        LastName = lastName;
-        Phone = phone;
-        Email = email;
-        ContactType = contactType;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phone = phone;
+        this.email = email;
+        this.contactType = contactType;
+    }
+
+    // Constructor to use using 4 parameters instead of six. Using "none" when email isn't provided
+    public Contact(String firstName, String lastName, String phone, String contactType) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phone = phone;
+        this.email = "None";
+        this.contactType = contactType;
     }
 
     // Getters and setters
     public String getFirstName() {
-        return FirstName;
+        return firstName;
     }
     public void setFirstName(String firstName) {
-        FirstName = firstName;
+        this.firstName = firstName;
     }
     public String getLastName() {
-        return LastName;
+        return lastName;
     }
     public void setLastName(String lastName) {
-        LastName = lastName;
+        this.lastName = lastName;
     }
     public String getPhone() {
-        return Phone;
+        return phone;
     }
     public void setPhone(String phone) {
-        Phone = phone;
+        this.phone = phone;
     }
     public String getEmail() {
-        return Email;
+        return email;
     }
     public void setEmail(String email) {
-        Email = email;
+        this.email = email;
     }
     public String getContactType() {
-        return ContactType;
+        return contactType;
     }
     public void setContactType(String contactType) {
-        ContactType = contactType;
+        this.contactType = contactType;
     }
 
     // Override toString to display contact information
-    @Override 
-    public String toString() {
-        return String.format("%s%s%n%s%s%n%s%s%n%s%s%n",
-            "Name: ", FirstName + " " + LastName,
-            "Phone: ", Phone,
-            "Email: ", Email,
-            "Contact Type: ", ContactType);
+    // Will be protected so that subclasses can use it without it being public
+   protected String toStringBase() {
+        return String.format("%s%s%n%s%s%n%s%s%n%s%s",
+            " Name: ", firstName + " " + lastName,
+            " Phone: ", phone,
+            " Email: ", email,
+            " Contact Type: ", contactType);
     }
+
+    // Abstract toString method to be implemented in subclasses
+    @Override
+    public abstract String toString();
 }

@@ -1,6 +1,6 @@
 /*
 Name: Layla Jenkins
-Date: 10/23/2026
+Date: 10/31/2026
 Assignment: SDC330 - Lecture Project
 
 This is an interface, which defines the oeprations that the class InventoryManager 
@@ -15,8 +15,8 @@ public interface InventoryOperations {
     // Methods to be used when this interface is being implemented
     public void addSupply(Supply supply);
     public void updateSupply(Supply supply);
-    public void deleteSupply(String supplyId);
-    public Supply findSupply(String supplyId);
+    public void deleteSupply(int supplyId);
+    public Supply findSupply(int supplyId);
     public List<Supply> getViewSupplies();
     public List<Supply> getLowStock();
 }

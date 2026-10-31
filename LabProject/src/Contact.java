@@ -1,13 +1,14 @@
 /*
 Name: Layla Jenkins
-Date: 10/25/2026
-Assignment: Java Lab Project: Part 3 - Week 3
+Date: 10/31/2026
+Assignment: Java Lab Project: Part 4 - Week 4
 
 This is the abstract base/super class. It stores common shared contact information.
 */
 
 public abstract class Contact {
     // Private properties
+    private int contactId;
     private String firstName;
     private String lastName;
     private String phone;
@@ -33,6 +34,12 @@ public abstract class Contact {
     }
 
     // Getters and setters
+    public int getContactId() {
+        return contactId;
+    }
+    public void setContactId(int contactId) {
+        this.contactId = contactId;
+    }
     public String getFirstName() {
         return firstName;
     }
@@ -68,10 +75,10 @@ public abstract class Contact {
     // Will be protected so that subclasses can use it without it being public
    protected String toStringBase() {
         return String.format("%s%s%n%s%s%n%s%s%n%s%s",
-            " Name: ", firstName + " " + lastName,
-            " Phone: ", phone,
-            " Email: ", email,
-            " Contact Type: ", contactType);
+            "  Name: ", firstName + " " + lastName,
+            "  Phone: ", phone,
+            "  Email: ", email,
+            "  Contact Type: ", contactType);
     }
 
     // Abstract toString method to be implemented in subclasses

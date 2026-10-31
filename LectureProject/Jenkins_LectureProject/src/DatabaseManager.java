@@ -100,7 +100,7 @@ public class DatabaseManager {
     }
 
     // Deletes a supply using supplyId
-    public void deleteSupply (Connection conn, int supplyId) {
+    public void deleteSupply(Connection conn, int supplyId) {
         String sql =
             "DELETE FROM Supplies WHERE supplyId=?";
         try {

@@ -1,7 +1,7 @@
 /*
 Name: Layla Jenkins
-Date: 10/25/2026
-Assignment: Java Lab Project: Part 3 - Week 3
+Date: 10/31/2026
+Assignment: Java Lab Project: Part 4 - Week 4
 
 This is a sub class. It will inherit properties and methods from the Contact (super) class.
 */
@@ -35,6 +35,6 @@ public class Business extends Contact {
     public String toString() {
         return String.format("%s%n%s%s",
             super.toStringBase(),
-            " Company Name: ", company);
+            "  Company Name: ", company);
     }
 }
